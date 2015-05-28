@@ -4,10 +4,12 @@
 //
 
 
+#include "IOSClass.h"
 #include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
 #include "java/io/PrintStream.h"
 #include "java/lang/System.h"
+#include "packy/Coke.h"
 #include "packy/Soda.h"
 
 @implementation PackySoda
@@ -35,6 +37,7 @@
 void PackySoda_mainWithNSStringArray_(IOSObjectArray *args) {
   PackySoda_initialize();
   [((JavaIoPrintStream *) nil_chk(JavaLangSystem_get_out_())) printlnWithNSString:@"Hello Soda"];
+  PackyCoke_mainWithNSStringArray_(nil);
 }
 
 void PackySoda_init(PackySoda *self) {

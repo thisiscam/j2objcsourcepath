@@ -6,6 +6,11 @@ j2objc -sourcepath proj1/src/main/:proj2/src/main -d out/ Soda.java Coke.java
 
 Try this:
 
-j2objc -d out/ proj1/src/main/packy/Coke.java proj2/src/main/packy/Soda.java
+Now we put Soda and Coke into some dummy package to make it more like a real project
 
+if Soda and Coke don't refer to each other, then the following command suffices because it involves no searching for binding;
+j2objc -d out/ proj1/src/main/packy/Coke.java proj2/src/main/packy/Soda.java // notice we use fully qualified paths
+
+Alternatively, j2objc supports paths __relative to sourcepaths__; also notice that adding sourcepath makes it possible to resolve mutual references
+j2objc -sourcepath proj1/src/main/:proj2/src/main -d out/ packy/Coke.java packy/Soda.java
 
