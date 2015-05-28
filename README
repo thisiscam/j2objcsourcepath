@@ -4,4 +4,8 @@ j2objc -d out1/ proj1/src/main/Coke.java proj2/src/main/Soda.java
 
 j2objc -sourcepath proj1/src/main/:proj2/src/main -d out/ Soda.java Coke.java
 
+Try this:
+
+j2objc -d out/ proj1/src/main/packy/Coke.java proj2/src/main/packy/Soda.java
+
 
